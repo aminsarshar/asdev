@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>پنل مدیریت</title>
+  <title>پنل مدیریت | @yield('title')</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('admin/plugins/font-awesome/css/font-awesome.min.css')}}">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{asset('admin/dist/css/bootstrap-rtl.min.css')}}">
   <!-- template rtl version -->
   <link rel="stylesheet" href="{{asset('admin/dist/css/custom-style.css')}}">
-
+  @livewireStyles
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -41,7 +41,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="#">خانه</a></li>
-              <li class="breadcrumb-item active">داشبورد دوم</li>
+              <li class="breadcrumb-item active">@yield('address')</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -94,5 +94,6 @@
 
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('admin/dist/js/pages/dashboard2.js')}}"></script>
+@livewireScripts
 </body>
 </html>
