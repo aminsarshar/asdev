@@ -1,11 +1,21 @@
-* text=auto eol=lf
+* text=auto
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
+*.blade.php linguist-language=PHP
+*.css linguist-vendored
+*.js linguist-vendored
+/public/* linguist-vendored
+/resources/* linguist-vendored
+/node_modules/* linguist-vendored
 
-/.github export-ignore
-CHANGELOG.md export-ignore
-.styleci.yml export-ignore
+# * text=auto eol=lf
+
+# *.blade.php diff=html
+# *.css diff=css
+# *.html diff=html
+# *.md diff=markdown
+# *.php diff=php
+
+# /.github export-ignore
+# CHANGELOG.md export-ignore
+# .styleci.yml export-ignore
+
