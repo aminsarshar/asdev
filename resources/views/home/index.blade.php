@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{asset('assets/css/app.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/grid.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/normalize.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('home/assets/css/app.css')}}" />
+    <link rel="stylesheet" href="{{asset('home/assets/css/grid.css')}}" />
+    <link rel="stylesheet" href="{{asset('home/assets/css/normalize.css')}}" />
+    <link rel="stylesheet" href="{{asset('home/assets/css/responsive.css')}}" />
+    <link rel="stylesheet" href="{{asset('home/assets/css/swiper-bundle.min.css')}}" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>وب سایت امین سرشار</title>
   </head>
@@ -76,7 +76,7 @@
                 data-aos="fade-right"
                 data-aos-duration="750"
               >
-                <img src="/assets/images/head-photo.png" alt="" />
+                <img src="/home/assets/images/head-photo.png" alt="" />
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@
             <div class="about__image">
               <img
                 class="about__img"
-                src="/assets/images/about-men.png"
+                src="/home/assets/images/about-men.png"
                 alt="aboutus"
               />
             </div>
@@ -724,7 +724,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-1.jpg"
+                      src="/home/assets/images/portfolio-1.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -733,7 +733,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-2.jpg"
+                      src="/home/assets/images/portfolio-2.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -742,7 +742,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-3.jpg"
+                      src="/home/assets/images/portfolio-3.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -751,7 +751,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-1.jpg"
+                      src="/home/assets/images/portfolio-1.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -760,7 +760,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-2.jpg"
+                      src="/home/assets/images/portfolio-2.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -769,7 +769,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-3.jpg"
+                      src="/home/assets/images/portfolio-3.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -785,7 +785,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-2.jpg"
+                      src="/home/assets/images/portfolio-2.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -794,7 +794,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-3.jpg"
+                      src="/home/assets/images/portfolio-3.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -811,7 +811,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-3.jpg"
+                      src="/home/assets/images/portfolio-3.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -820,7 +820,7 @@
                 <div class="swiper-slide">
                   <a href="#">
                     <img
-                      src="/assets/images/portfolio-3.jpg"
+                      src="/home/assets/images/portfolio-3.jpg"
                       class="portfolio-content__img"
                       alt="Portfolio Image"
                     />
@@ -1447,8 +1447,8 @@
     </footer>
 
     <div class="cover"></div>
-    <script src="{{asset('assets/js/script.js')}}"></script>
-    <script src="{{asset('assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('home/assets/js/script.js')}}"></script>
+    <script src="{{asset('home/assets/js/swiper-bundle.min.js')}}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
