@@ -26,4 +26,7 @@ Thumbs.db
 /public/build
 /public/admin
 /public/home
+/public/upload/
+/public/uploads/
+/public/upload/files/
 

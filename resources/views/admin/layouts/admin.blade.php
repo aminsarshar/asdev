@@ -95,5 +95,6 @@
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('admin/dist/js/pages/dashboard2.js')}}"></script>
 @livewireScripts
+@include('vendor.roksta.toastr')
 </body>
 </html>
