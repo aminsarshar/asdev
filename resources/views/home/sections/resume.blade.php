@@ -1,4 +1,4 @@
-      <section class="resume">
+      <section class="resume" id="resume">
           <div class="container skew-reset">
               <div class="section-head">
                   <h3 class="section-head__title">رزومه من</h3>

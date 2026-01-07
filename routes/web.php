@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\HeroController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Admin\HeroController;
 
-Route::get('/', function () {
-    return view('home.index');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 
 Route::get('/admin-panel/dashboard', function () {

@@ -1,7 +1,7 @@
-<section class="about-us">
+<section class="about-us" >
     <div class="container">
         <div class="section-head">
-            <h3 class="section-head__title">درباره من</h3>
+            <h3 class="section-head__title" id="about-me">درباره من</h3>
             <p class="section-head__caption">من کی هستم؟</p>
             <span class="section-head__line"> </span>
         </div>

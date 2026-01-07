@@ -1,4 +1,4 @@
-      <section class="pricing">
+      <section class="pricing" id="pricing">
           <div class="container skew-reset">
               <div class="section-head">
                   <h3 class="section-head__title">تعرفه ها</h3>
