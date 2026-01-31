@@ -31,22 +31,22 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|mimes:jpg,jpeg,png,svg,webp,gif',
             'title' => 'required',
             'description' => 'required',
             'icon' => 'required',
             'bg_color' => 'required',
+            'wave_color' => 'required',
         ]);
 
-        $fileNameImage = generateFileName($request->image->getClientOriginalName());
-        $request->image->move(public_path(env('SERVICE_IMAGES_UPLOAD_PATH')), $fileNameImage);
+        // $fileNameImage = generateFileName($request->image->getClientOriginalName());
+        // $request->image->move(public_path(env('SERVICE_IMAGES_UPLOAD_PATH')), $fileNameImage);
 
         Service::create([
-            'image' => $fileNameImage,
             'title' => $request->title,
             'description' => $request->description,
             'icon' => $request->icon,
             'bg_color' => $request->bg_color,
+            'wave_color' => $request->wave_color,
         ]);
 
         // Display a success toast with no title
@@ -89,24 +89,24 @@ class ServiceController extends Controller
             return back();
         }
         $request->validate([
-            'image' => 'nullable|mimes:jpg,jpeg,png,svg,webp,gif',
             'title' => 'required',
             'description' => 'required',
             'icon' => 'required',
             'bg_color' => 'required',
+            'wave_color' => 'required',
         ]);
 
-        if ($request->has('image')) {
-            $fileNameImage = generateFileName($request->image->getClientOriginalName());
-            $request->image->move(public_path(env('SERVICE_IMAGES_UPLOAD_PATH')), $fileNameImage);
-        }
+        // if ($request->has('image')) {
+        //     $fileNameImage = generateFileName($request->image->getClientOriginalName());
+        //     $request->image->move(public_path(env('SERVICE_IMAGES_UPLOAD_PATH')), $fileNameImage);
+        // }
 
         $service->update([
-            'image' => $request->has('image') ? $fileNameImage : $service->image,
             'title' => $request->title,
             'description' => $request->description,
             'icon' => $request->icon,
             'bg_color' => $request->bg_color,
+            'wave_color' => $request->wave_color,
         ]);
 
         // toast()->success('خانه با موفقیت ویرایش شد');

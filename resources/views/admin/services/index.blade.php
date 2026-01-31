@@ -1,9 +1,9 @@
 @extends('admin.layouts.admin')
 @section('title')
-    ایجاد خدمات
+    لیست خدمات
 @endsection
 @section('address')
-    ایجاد خدمات
+    لیست خدمات
 @endsection
 @section('content')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -31,11 +31,11 @@
                         <table class="table table-hover">
                             <tr>
                                 <th>ردیف</th>
-                                <th>تصویر</th>
                                 <th>عنوان</th>
                                 <th>توضیحات</th>
                                 <th>آیکون</th>
-                                <th>رنک پس زمینه</th>
+                                <th>رنگ پس زمینه</th>
+                                <th>رنگ موجی پس زمینه</th>
                                 <th>تاریخ ایجاد</th>
                                 <th>وضعیت</th>
                                 <th>عملیات</th>
@@ -43,15 +43,11 @@
                             @foreach ($services as $index => $service)
                                 <tr>
                                     <td>{{ $services->firstItem() + $index }}</td>
-                                    <td>
-                                        <img src="{{ asset(env('SERVICE_IMAGES_UPLOAD_PATH') . $service->image) }}"
-                                            alt="{{ $service->title }}" width="90px" height="100px"
-                                            style="border-radius: 6px">
-                                    </td>
                                     <td>{{ $service->title }}</td>
                                     <td>{{ $service->description }}</td>
                                     <td>{{ $service->icon }}</td>
                                     <td>{{ $service->bg_color }}</td>
+                                    <td>{{ $service->wave_color }}</td>
                                     <td><span
                                             class="badge badge-success">{{ verta($service->created_at)->format('%d  %B   %Y') }}</span>
                                     </td>

@@ -1,9 +1,9 @@
 @extends('admin.layouts.admin')
 @section('title')
-    ایجاد خانه
+    لیست خانه
 @endsection
 @section('address')
-    ایجاد خانه
+    لیست خانه
 @endsection
 @section('content')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

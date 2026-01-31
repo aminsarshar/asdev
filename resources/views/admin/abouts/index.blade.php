@@ -1,9 +1,9 @@
 @extends('admin.layouts.admin')
 @section('title')
-    ایجاد درباره
+    لیست درباره
 @endsection
 @section('address')
-    ایجاد درباره
+    لیست درباره
 @endsection
 @section('content')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -64,7 +64,7 @@
                                             @csrf
                                             @method('PATCH')
 
-                                            <input type="hidden" name="toggle_default" value="1">
+                                            <input type="hidden" nameلیست="toggle_default" value="1">
 
                                             <button
                                                 class="btn btn-sm {{ $about->is_default ? 'btn-danger' : 'btn-primary' }}">

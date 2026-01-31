@@ -50,20 +50,29 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
+
                         <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">رنگ موجی پس زمینه</label>
+                            <input type="text" name="wave_color" value="{{ old('wave_color') }}" class="form-control"
+                                placeholder="رنگ پس زمینه را وارد کنید">
+                            @error('wave_color')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        {{-- <div class="form-group col-md-6">
                             <label for="exampleInputPassword1">تصویر</label>
                             <input type="file" name="image" class="form-control" placeholder="تصویر را وارد کنید">
                             @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
                     <button type="submit" class="btn text-white" style="background:#0abead ">ارسال</button>
-                    <a href="{{route('admin.services.index')}}" class="btn btn-danger">بازگشت</a>
+                    <a href="{{ route('admin.services.index') }}" class="btn btn-danger">بازگشت</a>
                 </div>
             </form>
         </div>

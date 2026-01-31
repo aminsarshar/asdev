@@ -24,8 +24,8 @@
                             <label for="exampleInputEmail1">تصویر فعلی</label>
                             <td>
                                 <img style="height: 170px;object-fit: cover;width: 46%;margin-right: 100px;"
-                                    class="card-img-top" src="{{ url(env('SERVICE_IMAGES_UPLOAD_PATH') . $service->image) }}"
-                                    alt="">
+                                    class="card-img-top"
+                                    src="{{ url(env('SERVICE_IMAGES_UPLOAD_PATH') . $service->image) }}" alt="">
                             </td>
                         </div>
                         <div class="form-group col-md-6">
@@ -45,8 +45,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputPassword1">توضیحات</label>
-                            <input type="text" name="description" value="{{ $service->description }}" class="form-control"
-                                placeholder="توضیحات را وارد کنید">
+                            <input type="text" name="description" value="{{ $service->description }}"
+                                class="form-control" placeholder="توضیحات را وارد کنید">
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -64,6 +64,15 @@
                             <input type="text" name="bg_color" value="{{ $service->bg_color }}" class="form-control"
                                 placeholder="رنگ پس زمینه را وارد کنید">
                             @error('bg_color')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">رنگ موجی پس زمینه</label>
+                            <input type="text" name="wave_color" value="{{ $service->wave_color }}" class="form-control"
+                                placeholder="رنگ پس زمینه را وارد کنید">
+                            @error('wave_color')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
