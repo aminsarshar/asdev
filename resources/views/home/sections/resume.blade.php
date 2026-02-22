@@ -8,15 +8,26 @@
               <div class="row">
                   <div class="col-12 col-lg-4">
                       <ul class="resume-list h-100">
-                          <li class="resume-list__item resume-list__item--active" data-content-id="#education">
-                              <svg class="resume-list__icon" width="22" height="21.999" viewBox="0 0 22 21.999">
-                                  <path id="Icon_awesome-user-graduate" data-name="Icon awesome-user-graduate"
-                                      d="M463.357,3794a2.225,2.225,0,0,1-2.357-2.062v-.412c0-3.1,2.8-5.615,6.315-5.748l4.685,4.1,4.686-4.1c3.511.133,6.315,2.646,6.315,5.748v.412a2.225,2.225,0,0,1-2.358,2.062Zm2.358-15.124a4.918,4.918,0,0,1,.687-2.449l-3.241-.683V3778a.935.935,0,0,1,.045,1.718l.766,2.677a.45.45,0,0,1-.373.6h-2.053a.451.451,0,0,1-.373-.6l.766-2.677a.934.934,0,0,1,.044-1.718v-2.51l-.314-.064c-.888-.189-.888-1.169,0-1.358l9.36-1.973a4.839,4.839,0,0,1,1.95,0l9.349,1.977c.894.189.894,1.165,0,1.354l-4.728,1a4.87,4.87,0,0,1,.687,2.449c0,3.038-2.814,5.5-6.286,5.5S465.714,3781.912,465.714,3778.875Z"
-                                      transform="translate(-461 -3772)" fill="#fff" />
-                              </svg>
-                              <span class="resume-list__text">تحصیلات</span>
-                          </li>
-                          <li class="resume-list__item" data-content-id="#work-history">
+                          @foreach ($resumes as $resume)
+                              <li class="resume-list__item {{ $loop->first ? 'resume-list__item--active' : '' }}"
+                                  data-content-id="#resume-{{ $resume->id }}">
+
+                                  <span class="resume-list__text">
+                                      {{ $resume->title }}
+                                  </span>
+                              </li>
+                          @endforeach
+                          {{-- @foreach ($resumes as $resume)
+                        <li class="resume-list__item resume-list__item--active" data-content-id="#{{$resume->id}}">
+                            <svg class="resume-list__icon" width="22" height="21.999" viewBox="0 0 22 21.999">
+                                <path id="Icon_awesome-user-graduate" data-name="Icon awesome-user-graduate"
+                                    d="M463.357,3794a2.225,2.225,0,0,1-2.357-2.062v-.412c0-3.1,2.8-5.615,6.315-5.748l4.685,4.1,4.686-4.1c3.511.133,6.315,2.646,6.315,5.748v.412a2.225,2.225,0,0,1-2.358,2.062Zm2.358-15.124a4.918,4.918,0,0,1,.687-2.449l-3.241-.683V3778a.935.935,0,0,1,.045,1.718l.766,2.677a.45.45,0,0,1-.373.6h-2.053a.451.451,0,0,1-.373-.6l.766-2.677a.934.934,0,0,1,.044-1.718v-2.51l-.314-.064c-.888-.189-.888-1.169,0-1.358l9.36-1.973a4.839,4.839,0,0,1,1.95,0l9.349,1.977c.894.189.894,1.165,0,1.354l-4.728,1a4.87,4.87,0,0,1,.687,2.449c0,3.038-2.814,5.5-6.286,5.5S465.714,3781.912,465.714,3778.875Z"
+                                    transform="translate(-461 -3772)" fill="#fff" />
+                            </svg>
+                            <span class="resume-list__text">{{$resume->title}}</span>
+                        </li>
+                        @endforeach --}}
+                          {{-- <li class="resume-list__item" data-content-id="#work-history">
                               <svg class="resume-list__icon" width="22" height="21.999" viewBox="0 0 22 21.999">
                                   <path id="history_icon"
                                       d="M472.008,3859H472a11.03,11.03,0,0,1-6.9-2.435,1.064,1.064,0,0,1-.081-1.58l.5-.5a1.067,1.067,0,0,1,.76-.316,1.042,1.042,0,0,1,.655.228A8.079,8.079,0,0,0,472,3856.16a8.161,8.161,0,1,0-5.592-14.108l2.251,2.252a.71.71,0,0,1-.5,1.211h-6.448a.71.71,0,0,1-.709-.71v-6.448a.708.708,0,0,1,1.211-.5l2.191,2.19A10.995,10.995,0,1,1,472.008,3859Zm2.126-7.115a1.06,1.06,0,0,1-.653-.224l-2.9-2.257v-6.017a1.065,1.065,0,0,1,1.064-1.064h.71a1.065,1.065,0,0,1,1.064,1.064v4.628l1.805,1.4a1.067,1.067,0,0,1,.187,1.495l-.436.56A1.06,1.06,0,0,1,474.134,3851.884Z"
@@ -47,52 +58,32 @@
                                       transform="translate(-462 -4033.962)" fill="#fff" />
                               </svg>
                               <span class="resume-list__text">مهارت های سئو</span>
-                          </li>
+                          </li> --}}
                       </ul>
                   </div>
                   <div class="col-12 col-lg-8">
-                      <div class="resume-content resume-content--show" id="education">
-                          <div class="resume-content__item">
-                              <div class="resume-content__head">
-                                  <h5 class="resume-content__title">تحصیلات</h5>
-                                  <span class="resume-content__date">2020-2022</span>
+                      @foreach ($resumes as $resume)
+                          <div class="resume-content {{ $loop->first ? 'resume-content--show' : '' }}"
+                              id="resume-{{ $resume->id }}">
+
+                              <div class="resume-content__item">
+                                  <div class="resume-content__head">
+                                      <h5 class="resume-content__title">
+                                          {{ $resume->title }}
+                                      </h5>
+                                      <span class="resume-content__date">
+                                          {{ $resume->date }}
+                                      </span>
+                                  </div>
+
+                                  <p class="resume-content__description">
+                                      {{ $resume->description }}
+                                  </p>
                               </div>
-                              <h6 class="resume-content__subtitle">
-                                  دانش آموز رشته ریاضی پایه یازدهم
-                              </h6>
-                              <p class="resume-content__description">
-                                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                                  و مجله در ستون و سطرآنچنان که لازم است
-                              </p>
+
                           </div>
-                          <div class="resume-content__item">
-                              <div class="resume-content__head">
-                                  <h5 class="resume-content__title">تحصیلات</h5>
-                                  <span class="resume-content__date">2020-2022</span>
-                              </div>
-                              <h6 class="resume-content__subtitle">
-                                  دانش آموز رشته ریاضی پایه یازدهم
-                              </h6>
-                              <p class="resume-content__description">
-                                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                                  و مجله در ستون و سطرآنچنان که لازم است
-                              </p>
-                          </div>
-                          <div class="resume-content__item">
-                              <div class="resume-content__head">
-                                  <h5 class="resume-content__title">تحصیلات</h5>
-                                  <span class="resume-content__date">2020-2022</span>
-                              </div>
-                              <h6 class="resume-content__subtitle">
-                                  دانش آموز رشته ریاضی پایه یازدهم
-                              </h6>
-                              <p class="resume-content__description">
-                                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                                  و مجله در ستون و سطرآنچنان که لازم است
-                              </p>
-                          </div>
-                      </div>
-                      <div class="resume-content" id="work-history">
+                      @endforeach
+                      {{-- <div class="resume-content" id="work-history">
                           <div class="resume-content__item">
                               <div class="resume-content__head">
                                   <h5 class="resume-content__title">سابقه کار</h5>
@@ -258,8 +249,33 @@
                                   و مجله در ستون و سطرآنچنان که لازم است
                               </p>
                           </div>
-                      </div>
+                      </div> --}}
                   </div>
               </div>
           </div>
       </section>
+
+      <script>
+document.querySelectorAll('.resume-list__item').forEach(item => {
+
+    item.addEventListener('click', function() {
+
+        // حذف active از همه
+        document.querySelectorAll('.resume-list__item')
+            .forEach(el => el.classList.remove('resume-list__item--active'));
+
+        document.querySelectorAll('.resume-content')
+            .forEach(el => el.classList.remove('resume-content--show'));
+
+        // فعال کردن آیتم کلیک شده
+        this.classList.add('resume-list__item--active');
+
+        // گرفتن id سکشن
+        let target = this.getAttribute('data-content-id');
+
+        document.querySelector(target)
+            .classList.add('resume-content--show');
+    });
+
+});
+</script>
