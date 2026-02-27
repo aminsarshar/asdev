@@ -94,6 +94,33 @@
 
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('admin/dist/js/pages/dashboard2.js')}}"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script src="{{asset('admin/js/ckeditor.js')}}"></script>
+
+<script>
+document.getElementById('imageInput').addEventListener('change', function(e) {
+
+    const file = e.target.files[0];
+    const fileName = document.getElementById('fileName');
+    const preview = document.getElementById('imagePreview');
+
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+        alert('لطفاً فقط فایل تصویری انتخاب کنید');
+        e.target.value = '';
+        return;
+    }
+
+    fileName.textContent = file.name;
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        preview.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+</script>
 @livewireScripts
 @include('vendor.roksta.toastr')
 </body>

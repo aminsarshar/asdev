@@ -84,7 +84,34 @@ ul {
     padding-left: .5rem;
 }
 
+.custom-upload-box {
+    border: 2px dashed #0abead !important;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.custom-upload-box:hover {
+    background: #e9fdfc;
+}
+
+.upload-label {
+    background: #0abead !important;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.file-name {
+    display: block;
+    font-size: 14px;
+    color: #555;
+}
 /*------------------------------------ contacts-list ------------------------------------*/
 
 .contacts-list-img {

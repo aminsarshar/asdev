@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputPassword1">توضیحات</label>
-                            <input type="text" name="description" value="{{ old('description') }}" class="form-control"
+                            <input type="text" name="description" id="description" value="{{ old('description') }}" class="form-control"
                                 placeholder="توضیحات را وارد کنید">
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>

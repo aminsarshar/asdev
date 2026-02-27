@@ -77,12 +77,21 @@
                                   </div>
 
                                   <p class="resume-content__description">
-                                      {{ $resume->description }}
+                                      {!! $resume->description !!}
                                   </p>
                               </div>
 
                           </div>
                       @endforeach
+
+                      <style>
+                          .resume-content__description {
+                              white-space: normal;
+                              word-break: break-word;
+                              margin-top: 13px;
+                              font-size: 20px;
+                          }
+                      </style>
                       {{-- <div class="resume-content" id="work-history">
                           <div class="resume-content__item">
                               <div class="resume-content__head">
@@ -256,26 +265,26 @@
       </section>
 
       <script>
-document.querySelectorAll('.resume-list__item').forEach(item => {
+          document.querySelectorAll('.resume-list__item').forEach(item => {
 
-    item.addEventListener('click', function() {
+              item.addEventListener('click', function() {
 
-        // حذف active از همه
-        document.querySelectorAll('.resume-list__item')
-            .forEach(el => el.classList.remove('resume-list__item--active'));
+                  // حذف active از همه
+                  document.querySelectorAll('.resume-list__item')
+                      .forEach(el => el.classList.remove('resume-list__item--active'));
 
-        document.querySelectorAll('.resume-content')
-            .forEach(el => el.classList.remove('resume-content--show'));
+                  document.querySelectorAll('.resume-content')
+                      .forEach(el => el.classList.remove('resume-content--show'));
 
-        // فعال کردن آیتم کلیک شده
-        this.classList.add('resume-list__item--active');
+                  // فعال کردن آیتم کلیک شده
+                  this.classList.add('resume-list__item--active');
 
-        // گرفتن id سکشن
-        let target = this.getAttribute('data-content-id');
+                  // گرفتن id سکشن
+                  let target = this.getAttribute('data-content-id');
 
-        document.querySelector(target)
-            .classList.add('resume-content--show');
-    });
+                  document.querySelector(target)
+                      .classList.add('resume-content--show');
+              });
 
-});
-</script>
+          });
+      </script>

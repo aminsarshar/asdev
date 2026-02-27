@@ -44,7 +44,7 @@
                                 <tr>
                                     <td>{{ $resumes->firstItem() + $index }}</td>
                                     <td>{{ $resume->title }}</td>
-                                    <td>{{ $resume->description }}</td>
+                                    <td>{{ \Illuminate\Support\Str::limit($resume->description, 20, '...') }}</td>
                                     <td>{{ $resume->icon }}</td>
                                     <td>{{ $resume->date }}</td>
                                     <td>{{ $resume->status }}</td>

@@ -30,8 +30,9 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputPassword1">توضیحات</label>
-                            <input type="text" name="description" value="{{ $resume->description }}" class="form-control"
-                                placeholder="توضیحات را وارد کنید">
+                            {{-- <input type="text" name="description" value="{{ $resume->description }}" class="form-control"
+                                placeholder="توضیحات را وارد کنید"> --}}
+                                <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{ $resume->description }}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
