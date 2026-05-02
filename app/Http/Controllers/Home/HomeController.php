@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Category;
 use App\Models\Hero;
+use App\Models\Project;
 use App\Models\Resume;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -17,7 +19,9 @@ class HomeController extends Controller
         $about = About::orderBy('id', 'desc')->where('is_default', 1)->take(1)->first();
         $services = Service::get()->where('is_default', 1)->take(6);
         $resumes = Resume::get()->where('status', 1)->take(6);
+        $categories = Category::get();
+        $projects = Project::get()->where('status', 1)->take(6);
 
-        return view('home.index', compact('hero', 'about' , 'services' , 'resumes'));
+        return view('home.index', compact('hero', 'about' , 'services' , 'resumes' , 'projects' , 'categories'));
     }
 }

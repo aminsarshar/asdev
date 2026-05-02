@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ResumeController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Home\HomeController;
@@ -24,6 +25,7 @@ route::prefix('admin-panel/management')->name('admin.')->group(function(){
     route::resource('services' , ServiceController::class);
     route::resource('resumes' , ResumeController::class);
     route::resource('categories' , CategoryController::class);
+    route::resource('projects' , ProjectController::class);
 
 });
 
