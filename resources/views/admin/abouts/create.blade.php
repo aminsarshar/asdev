@@ -28,8 +28,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputPassword1">توضیحات</label>
-                            <input type="text" name="description" id="description" value="{{ old('description') }}" class="form-control"
-                                placeholder="توضیحات را وارد کنید">
+                            <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -69,11 +68,30 @@
                             @enderror
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="exampleInputPassword1">تصویر</label>
-                            <input type="file" name="image" class="form-control" placeholder="تصویر را وارد کنید">
+                        <div class="form-group col-md-6 text-center">
+                            <label class="d-block">تصویر</label>
+
+                            {{-- پیش‌نمایش --}}
+                            <div class="mt-2 mb-3">
+                                <img id="imagePreview" src="{{ 'https://via.placeholder.com/300x200?text=No+Image' }}"
+                                    class="img-fluid rounded shadow" style="max-height:200px; object-fit:cover;"
+                                    alt="preview">
+                            </div>
+
+                            {{-- آپلود باکس سفارشی --}}
+                            <div class="custom-upload-box">
+                                <input type="file" name="image" id="imageInput" hidden>
+
+                                <label for="imageInput" class="upload-label">
+                                    📁 انتخاب تصویر
+                                </label>
+
+                                <span id="fileName" class="file-name">
+                                </span>
+                            </div>
+
                             @error('image')
-                                <span class="text-danger">{{ $message }}</span>
+                                <div class="text-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>

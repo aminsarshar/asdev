@@ -4,7 +4,7 @@
              <div class="col-12 col-lg-6">
                  <div class="home__content" data-aos="fade-left" data-aos-duration="750">
                      <h3 class="home__name">{{$hero->title}}</h3>
-                     <h2 class="home__title">{{$hero->description}}</h2>
+                     <h2 class="home__title">{!!$hero->description!!}</h2>
                      <p class="home__caption">
                         {{$hero->field}}
                      </p>

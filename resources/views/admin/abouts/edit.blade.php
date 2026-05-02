@@ -20,19 +20,36 @@
                 @method('PUT')
                 <div class="card-body">
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="exampleInputEmail1">تصویر فعلی</label>
-                            <td>
-                                <img style="height: 170px;object-fit: cover;width: 46%;margin-right: 100px;"
-                                    class="card-img-top" src="{{ url(env('ABOUT_IMAGES_UPLOAD_PATH') . $about->image) }}"
-                                    alt="">
-                            </td>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="exampleInputPassword1">تصویر</label>
-                            <input type="file" name="image" class="form-control" placeholder="تصویر را وارد کنید">
+                        <div class="form-group col-md-12 text-center">
+                            <label class="d-block">تصویر</label>
+
+                            {{-- پیش‌نمایش --}}
+                            <div class="mt-2 mb-3">
+                                <img id="imagePreview"
+                                    src="{{ $about->image ? url(env('ABOUT_IMAGES_UPLOAD_PATH') . $about->image) : 'https://via.placeholder.com/300x200?text=No+Image' }}"
+                                    class="img-fluid rounded shadow" style="max-height:200px; object-fit:cover;"
+                                    alt="preview">
+                            </div>
+
+                            {{-- آپلود باکس سفارشی --}}
+                            <div class="custom-upload-box">
+                                <input type="file" name="image" id="imageInput" hidden>
+
+                                <label for="imageInput" class="upload-label">
+                                    📁 انتخاب تصویر
+                                </label>
+
+                                <span id="fileName" class="file-name">
+                                    @if ($about->image)
+                                        در صورت نیاز تصویر جدید انتخاب کنید
+                                    @else
+                                        هنوز فایلی انتخاب نشده
+                                    @endif
+                                </span>
+                            </div>
+
                             @error('image')
-                                <span class="text-danger">{{ $message }}</span>
+                                <div class="text-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
@@ -45,8 +62,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputPassword1">توضیحات</label>
-                            <input type="text" name="description" value="{{ $about->description }}" class="form-control"
-                                placeholder="توضیحات را وارد کنید">
+                            <textarea name="description" id="description" class="form-control">{{ old('description', $about->description) }}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

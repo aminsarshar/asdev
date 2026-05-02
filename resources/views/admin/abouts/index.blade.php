@@ -51,7 +51,7 @@
                                             style="border-radius: 6px">
                                     </td>
                                     <td>{{ $about->title }}</td>
-                                    <td>{{ $about->description }}</td>
+                                    <td>{!! $about->description !!}</td>
                                     <td>{{ $about->contact_button_text }}</td>
                                     <td>{{ $about->contact_button_link }}</td>
                                     <td>{{ $about->resume_button_text }}</td>

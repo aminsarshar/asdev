@@ -150,6 +150,32 @@
                               </li>
                           </ul>
                       </li>
+                                            <li
+                          class="nav-item has-treeview {{ request()->is('admin-panel/management/categories', 'admin-panel/management/categories/create') ? 'menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fa fa-pie-chart"></i>
+                              <p>
+                                  دسته بندی ها
+                                  <i class="right fa fa-angle-left"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{ route('admin.categories.index') }}"
+                                      class="nav-link {{ request()->is('admin-panel/management/categories') ? 'active' : '' }}">
+                                      <i class="fa fa-circle-o nav-icon"></i>
+                                      <p>لیست دسته بندی ها</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('admin.categories.create') }}"
+                                      class="nav-link {{ request()->is('admin-panel/management/categories/create') ? 'active' : '' }}">
+                                      <i class="fa fa-circle-o nav-icon"></i>
+                                      <p>ایجاد دسته بندی</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
                       <li class="nav-item has-treeview">
                           <a href="#" class="nav-link">
                               <i class="nav-icon fa fa-tree"></i>
