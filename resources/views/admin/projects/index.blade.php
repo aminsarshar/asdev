@@ -31,10 +31,11 @@
                         <table class="table table-hover">
                             <tr>
                                 <th>ردیف</th>
-                                <th>عنوان</th>
                                 <th>تصویر</th>
+                                <th>عنوان</th>
                                 <th>دسته بندی</th>
                                 <th>وضعیت</th>
+                                <th>تاریخ ایحاد</th>
                                 <th>عملیات</th>
                             </tr>
                             @foreach ($projects as $index => $project)
@@ -52,11 +53,11 @@
                                             @csrf
                                             @method('PATCH')
 
-                                            <input type="hidden" nameلیست="toggle_default" value="1">
+                                            <input type="hidden" name="toggle_default" value="1">
 
                                             <button
-                                                class="btn btn-sm {{ $project->status ? 'btn-danger' : 'btn-primary' }}">
-                                                {{ $project->status ? 'غیرفعال کردن' : 'فعال‌سازی' }}
+                                                class="btn btn-sm {{ $project->is_default ? 'btn-danger' : 'btn-primary' }}">
+                                                {{ $project->is_default ? 'غیرفعال' : 'فعال‌سازی' }}
                                             </button>
                                         </form>
                                     </td>

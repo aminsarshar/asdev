@@ -36,16 +36,17 @@
                                  </a>
                              </div>
                          @endforeach
-                         <div class="swiper-slide">
+                         {{-- <div class="swiper-slide">
                              <a href="#">
                                  <img src="/home/assets/images/portfolio-2.jpg" class="portfolio-content__img"
                                      alt="Portfolio Image" />
                              </a>
-                         </div>
+                         </div> --}}
                      </div>
                      <div class="swiper-pagination"></div>
                  </div>
              </div>
+             @foreach ($categories as $category)
              <div class="portfolio-content" id="wrok-{{ $category->id }}">
                  <div class="swiper2">
                      <div class="swiper-wrapper">
@@ -56,50 +57,40 @@
                                          class="portfolio-content__img" alt="Portfolio Image" />
                                  </a>
                              </div>
-                         @endforeach
-                         {{-- <div class="swiper-slide">
-                             <a href="#">
-                                 <img src="/home/assets/images/portfolio-2.jpg" class="portfolio-content__img"
-                                     alt="Portfolio Image" />
-                             </a>
-                         </div>
-                         <div class="swiper-slide">
-                             <a href="#">
-                                 <img src="/home/assets/images/portfolio-3.jpg" class="portfolio-content__img"
-                                     alt="Portfolio Image" />
-                             </a>
-                         </div> --}}
-                     </div>
-                     <div class="swiper-pagination"></div>
-                 </div>
-             </div>
+                             @endforeach
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    @endforeach
 
-             <div class="portfolio-content" id="wrok-{{ $category->id }}">
-                 <div class="swiper2">
-                     <div class="swiper-wrapper">
-                         @foreach ($projects as $project)
-                             <div class="swiper-slide">
-                                 <a href="#">
-                                     <img src="{{ url(env('PROJECT_IMAGES_UPLOAD_PATH') . $project->image) }}"
-                                         class="portfolio-content__img" alt="Portfolio Image" />
-                                 </a>
-                             </div>
-                         @endforeach
-                         {{-- <div class="swiper-slide">
-                             <a href="#">
-                                 <img src="/home/assets/images/portfolio-2.jpg" class="portfolio-content__img"
-                                     alt="Portfolio Image" />
-                             </a>
-                         </div>
-                         <div class="swiper-slide">
-                             <a href="#">
-                                 <img src="/home/assets/images/portfolio-3.jpg" class="portfolio-content__img"
-                                     alt="Portfolio Image" />
-                             </a>
-                         </div> --}}
-                     </div>
-                     <div class="swiper-pagination"></div>
-                 </div>
-             </div>
-         </div>
-     </section>
+            </div>
+        </section>
+
+        {{-- <div class="portfolio-content" id="wrok-{{ $category->id }}">
+            <div class="swiper2">
+                <div class="swiper-wrapper">
+                    @foreach ($projects as $project)
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="{{ url(env('PROJECT_IMAGES_UPLOAD_PATH') . $project->image) }}"
+                                    class="portfolio-content__img" alt="Portfolio Image" />
+                            </a>
+                        </div>
+                    @endforeach
+                    {{-- <div class="swiper-slide">
+                        <a href="#">
+                            <img src="/home/assets/images/portfolio-2.jpg" class="portfolio-content__img"
+                                alt="Portfolio Image" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="/home/assets/images/portfolio-3.jpg" class="portfolio-content__img"
+                                alt="Portfolio Image" />
+                        </a>
+                    </div> --}}
+                {{-- </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div> --}}

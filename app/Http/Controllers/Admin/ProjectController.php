@@ -66,7 +66,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $categories = Category::all();
+        return view('admin.projects.edit', compact('project', 'categories'));
     }
 
     /**
@@ -77,7 +78,7 @@ class ProjectController extends Controller
         if ($request->has('toggle_default')) {
 
             $project->update([
-                'status' => $project->status ? 0 : 1
+                'is_default' => $project->is_default ? 0 : 1
             ]);
 
             flash()
@@ -89,7 +90,7 @@ class ProjectController extends Controller
         $request->validate([
             'image' => 'nullable|mimes:jpg,jpeg,png,svg,webp,gif',
             'title' => 'required',
-            'category_id' => 'category_id',
+            'category_id' => 'required',
         ]);
 
         if ($request->has('image')) {
@@ -111,8 +112,10 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        flash()->option('position', 'bottom-center')->success('حذف با موفقیت انجام شد');
+        return redirect()->route('admin.projects.index');
     }
 }
