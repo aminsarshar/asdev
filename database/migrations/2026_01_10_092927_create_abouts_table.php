@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('contact_button_text');
             $table->string('contact_button_link');
             $table->string('resume_button_text');

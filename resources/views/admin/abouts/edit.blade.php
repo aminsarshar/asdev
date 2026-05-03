@@ -61,8 +61,8 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="exampleInputPassword1">توضیحات</label>
-                            <textarea name="description" id="description" class="form-control">{{ old('description', $about->description) }}</textarea>
+                            <label>توضیحات</label>
+                            <textarea name="description" id="description" class="form-control">{{ old('description', $hero->description) }}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
